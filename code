@@ -1,0 +1,20 @@
+using System;
+using System.IO;
+namespace WorkCacheCleaner
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			Console.WriteLine("Make Sure To exit Garry's Mod Then Press Any Key");
+			Console.ReadKey(true);
+			string[] addons = Directory.GetFiles(@"C:\Program Files (x86)\Steam\steamapps\common\GarrysMod\garrysmod\cache\workshop");
+			foreach (string addon in addons)
+				  File.Delete(addon);
+			
+			
+			Console.Write("Cache Cleaned! Press Any Key To Exit");
+			Console.ReadKey(true);
+		}
+	}
+}
